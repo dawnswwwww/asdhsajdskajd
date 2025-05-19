@@ -27,7 +27,7 @@ jobs:
         with:
           node-version: 'lts/*'
           cache: 'npm'
-          cache-dependency-path: hanzi-game/package-lock.json
+          cache-dependency-path: package-lock.json
       
       - name: Install dependencies
         run: cd hanzi-game && npm ci
