@@ -237,6 +237,8 @@ const AnswerInput: React.FC<AnswerInputProps> = ({
   const [feedbackType, setFeedbackType] = useState<'success' | 'error' | 'info'>('info');
   
   const { state, checkAnswer, useHint, isAnswerCorrect } = useGameContext();
+  // 获取提示
+  const hint = useHint();
   const { playSound } = useSounds();
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -299,8 +301,7 @@ const AnswerInput: React.FC<AnswerInputProps> = ({
     // 播放提示音效
     playSound('hint');
     
-    // 获取提示
-    const hint = useHint();
+
     
     // 设置反馈信息为提示内容
     if (hint) {
