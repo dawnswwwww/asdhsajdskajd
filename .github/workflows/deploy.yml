@@ -30,10 +30,10 @@ jobs:
           cache-dependency-path: package-lock.json
       
       - name: Install dependencies
-        run: cd hanzi-game && npm ci
+        run: npm ci
       
       - name: Build project
-        run: cd hanzi-game && npm run build
+        run: npm run build
       
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v4
@@ -41,7 +41,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './hanzi-game/build'
+          path: './build'
           
       - name: Deploy to GitHub Pages
         id: deployment
